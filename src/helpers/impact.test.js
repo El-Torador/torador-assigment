@@ -48,8 +48,13 @@ describe('test all the impacts by period', () => {
       .toStrictEqual(
         {
           currentlyInfected: data[0].reportedCases * 10,
+<<<<<<< HEAD
           infectionsByRequestedTime: Math.floor(((data[0].reportedCases * 10) * (2 ** 10)) / 30)
           /* severeCasesByRequestedTime: Math.floor(
+=======
+          infectionsByRequestedTime: Math.floor(((data[0].reportedCases * 10) * (2 ** 10)) / 30),
+          severeCasesByRequestedTime: Math.floor(
+>>>>>>> bd04f844fda9d9a746311bc49794c13010d70db8
             (
               (
                 (
@@ -62,7 +67,10 @@ describe('test all the impacts by period', () => {
               ) * 15
             ) / 100
           )
+<<<<<<< HEAD
           */
+=======
+>>>>>>> bd04f844fda9d9a746311bc49794c13010d70db8
         }
       );
   });
@@ -81,8 +89,13 @@ describe('test all the impacts by period', () => {
                 )
               ) / 30
             ) * 7
+<<<<<<< HEAD
           )
           /* severeCasesByRequestedTime: Math.floor(
+=======
+          ),
+          severeCasesByRequestedTime: Math.floor(
+>>>>>>> bd04f844fda9d9a746311bc49794c13010d70db8
             (
               (
                 (
@@ -97,7 +110,10 @@ describe('test all the impacts by period', () => {
               ) * 15
             ) / 100
           )
+<<<<<<< HEAD
           */
+=======
+>>>>>>> bd04f844fda9d9a746311bc49794c13010d70db8
         }
       );
   });
@@ -106,8 +122,13 @@ describe('test all the impacts by period', () => {
       .toStrictEqual(
         {
           currentlyInfected: data[2].reportedCases * 10,
+<<<<<<< HEAD
           infectionsByRequestedTime: (data[2].reportedCases * 10) * (2 ** 10)
           /* severeCasesByRequestedTime: Math.floor(
+=======
+          infectionsByRequestedTime: (data[2].reportedCases * 10) * (2 ** 10),
+          severeCasesByRequestedTime: Math.floor(
+>>>>>>> bd04f844fda9d9a746311bc49794c13010d70db8
             (
               (
                 (
@@ -118,8 +139,12 @@ describe('test all the impacts by period', () => {
               ) * 15
             ) / 100
           )
+<<<<<<< HEAD
           */
-        }
+=======
+>>>>>>> bd04f844fda9d9a746311bc49794c13010d70db8
+
+}
       );
   });
 });
