@@ -48,9 +48,8 @@ describe('test all the impacts by period', () => {
       .toStrictEqual(
         {
           currentlyInfected: data[0].reportedCases * 10,
-          infectionsByRequestedTime: Math.floor(((data[0].reportedCases * 10) * (2 ** 10)) / 30)
-          /* severeCasesByRequestedTime: Math.floor(
-          infectionsByRequestedTime: Math.floor(((data[0].reportedCases * 10) * (2 ** 10)) / 30),
+          infectionsByRequestedTime: ((data[0].reportedCases * 10) * (2 ** 10)) / 30
+          /*
           severeCasesByRequestedTime: Math.floor(
             (
               (
@@ -73,17 +72,15 @@ describe('test all the impacts by period', () => {
       .toStrictEqual(
         {
           currentlyInfected: impact.impactByDaily(data[1]).currentlyInfected,
-          infectionsByRequestedTime: Math.floor(
+          infectionsByRequestedTime: (
             (
               (
-                (
-                  data[1].reportedCases * 10
-                ) * (
-                  2 ** 10
-                )
-              ) / 30
-            ) * 7
-          )
+                data[1].reportedCases * 10
+              ) * (
+                2 ** 10
+              )
+            ) / 30
+          ) * 7
           /* severeCasesByRequestedTime: Math.floor(
           ),
           severeCasesByRequestedTime: Math.floor(

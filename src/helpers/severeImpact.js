@@ -1,7 +1,7 @@
 const severeImpactByDaily = (data) => (
   {
     currentlyInfected: data.reportedCases * 50,
-    infectionsByRequestedTime: Math.floor(((data.reportedCases * 50) * (2 ** 10)) / 30)
+    infectionsByRequestedTime: ((data.reportedCases * 50) * (2 ** 10)) / 30
     /* severeCasesByRequestedTime: Math.floor(
       (
         (
@@ -22,7 +22,7 @@ const severeImpactByDaily = (data) => (
 const severeImpactByWeekly = (data) => (
   {
     currentlyInfected: severeImpactByDaily(data).currentlyInfected,
-    infectionsByRequestedTime: Math.floor((((data.reportedCases * 50) * (2 ** 10)) / 30) * 7)
+    infectionsByRequestedTime: (((data.reportedCases * 50) * (2 ** 10)) / 30) * 7
     /* severeCasesByRequestedTime: Math.floor(
       (
         (
