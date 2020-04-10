@@ -1,55 +1,29 @@
 const impactByDaily = (data) => (
   {
     currentlyInfected: data.reportedCases * 10,
-    infectionsByRequestedTime: ((data.reportedCases * 10) * (2 ** 10)) / 30
-    /*
-    severeCasesByRequestedTime: Math.floor(
-      (
-        (
-          (
-            (
-              data.reportedCases * 10
-            ) * (
-              2 ** 10
-            )
-          ) / 30
-        ) * 15
-      ) / 100
-    )
-    */
-    // hospitalBedsByRequestedTime: data.totalHospitalBeds - ((data.totalHospitalBeds * 50) / 100)
+    infectionsByRequestedTime: (data.reportedCases * 10) * (2 ** Math.trunc(data.timeToElapse / 3))
   }
 );
 
 const impactByWeekly = (data) => (
   {
     currentlyInfected: impactByDaily(data).currentlyInfected,
-    infectionsByRequestedTime: (((data.reportedCases * 10) * (2 ** 10)) / 30) * 7
-    /*
-    severeCasesByRequestedTime: Math.floor(
-      (
-        (
-          (
-            (
-              (
-                data.reportedCases * 10
-              ) * (
-                2 ** 10
-              )
-            ) / 30
-          ) * 7
-        ) * 15
-      ) / 100
+    infectionsByRequestedTime: (
+      data.reportedCases * 10
+    ) * (
+      2 ** Math.trunc((data.timeToElapse * 7) / 3)
     )
-    */
   }
 );
 
 const impactByMonthly = (data) => (
   {
     currentlyInfected: data.reportedCases * 10,
-    infectionsByRequestedTime: (data.reportedCases * 10) * (2 ** 10)
-    // severeCasesByRequestedTime: Math.floor((((data.reportedCases * 10) * (2 ** 10)) * 15) / 100)
+    infectionsByRequestedTime: (
+      data.reportedCases * 10
+    ) * (
+      2 ** Math.trunc((data.timeToElapse * 30) / 3)
+    )
   }
 );
 

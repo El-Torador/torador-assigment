@@ -48,21 +48,13 @@ describe('test all the impacts by period', () => {
       .toStrictEqual(
         {
           currentlyInfected: data[0].reportedCases * 10,
-          infectionsByRequestedTime: ((data[0].reportedCases * 10) * (2 ** 10)) / 30
-          /*
-          severeCasesByRequestedTime: Math.floor(
-            (
-              (
-                (
-                  (
-                    data[0].reportedCases * 10
-                  ) * (
-                    2 ** 10
-                  )
-                ) / 30
-              ) * 15
-            ) / 100
+          infectionsByRequestedTime: (
+            data[0].reportedCases * 10
+          ) * (
+            2 ** Math.trunc(data[0].timeToElapse / 3)
           )
+          /*
+          severeCasesByRequestedTime:
           */
         }
       );
@@ -73,31 +65,11 @@ describe('test all the impacts by period', () => {
         {
           currentlyInfected: impact.impactByDaily(data[1]).currentlyInfected,
           infectionsByRequestedTime: (
-            (
-              (
-                data[1].reportedCases * 10
-              ) * (
-                2 ** 10
-              )
-            ) / 30
-          ) * 7
-          /* severeCasesByRequestedTime: Math.floor(
-          ),
-          severeCasesByRequestedTime: Math.floor(
-            (
-              (
-                (
-                  (
-                    (
-                      data[1].reportedCases * 10
-                    ) * (
-                      2 ** 10
-                    )
-                  ) / 30
-                ) * 7
-              ) * 15
-            ) / 100
+            data[1].reportedCases * 10
+          ) * (
+            2 ** Math.trunc((data[1].timeToElapse * 7) / 3)
           )
+          /* severeCasesByRequestedTime:
           */
         }
       );
@@ -107,20 +79,12 @@ describe('test all the impacts by period', () => {
       .toStrictEqual(
         {
           currentlyInfected: data[2].reportedCases * 10,
-          infectionsByRequestedTime: (data[2].reportedCases * 10) * (2 ** 10)
-          /* severeCasesByRequestedTime: Math.floor(
-          infectionsByRequestedTime: (data[2].reportedCases * 10) * (2 ** 10),
-          severeCasesByRequestedTime: Math.floor(
-            (
-              (
-                (
-                  data[2].reportedCases * 10
-                ) * (
-                  2 ** 10
-                )
-              ) * 15
-            ) / 100
+          infectionsByRequestedTime: (
+            data[2].reportedCases * 10
+          ) * (
+            2 ** Math.trunc((data[2].timeToElapse * 30) / 3)
           )
+          /* severeCasesByRequestedTime:
           */
         }
       );
