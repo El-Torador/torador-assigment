@@ -52,10 +52,22 @@ describe('test all the impacts by period', () => {
             data[0].reportedCases * 10
           ) * (
             2 ** Math.trunc(data[0].timeToElapse / 3)
+          ),
+          severeCasesByRequestedTime: 0.15 * (
+            data[0].reportedCases * 10
+          ) * (
+            2 ** Math.trunc(data[0].timeToElapse / 3)
+          ),
+          hospitalBedsByRequestedTime: Math.trunc(
+            (
+              0.35 * data[0].totalHospitalBeds
+            ) - (0.15 * (
+              data[0].reportedCases * 10
+            ) * (
+              2 ** Math.trunc(data[0].timeToElapse / 3)
+            )
+            )
           )
-          /*
-          severeCasesByRequestedTime:
-          */
         }
       );
   });
@@ -68,9 +80,22 @@ describe('test all the impacts by period', () => {
             data[1].reportedCases * 10
           ) * (
             2 ** Math.trunc((data[1].timeToElapse * 7) / 3)
+          ),
+          severeCasesByRequestedTime: 0.15 * (
+            data[1].reportedCases * 10
+          ) * (
+            2 ** Math.trunc((data[1].timeToElapse * 7) / 3)
+          ),
+          hospitalBedsByRequestedTime: Math.trunc(
+            (
+              0.35 * data[1].totalHospitalBeds
+            ) - (0.15 * (
+              data[1].reportedCases * 10
+            ) * (
+              2 ** Math.trunc((data[1].timeToElapse * 7) / 3)
+            )
+            )
           )
-          /* severeCasesByRequestedTime:
-          */
         }
       );
   });
@@ -83,9 +108,22 @@ describe('test all the impacts by period', () => {
             data[2].reportedCases * 10
           ) * (
             2 ** Math.trunc((data[2].timeToElapse * 30) / 3)
+          ),
+          severeCasesByRequestedTime: 0.15 * (
+            data[2].reportedCases * 10
+          ) * (
+            2 ** Math.trunc((data[2].timeToElapse * 30) / 3)
+          ),
+          hospitalBedsByRequestedTime: Math.trunc(
+            (
+              0.35 * data[2].totalHospitalBeds
+            ) - (0.15 * (
+              data[2].reportedCases * 10
+            ) * (
+              2 ** Math.trunc((data[2].timeToElapse * 30) / 3)
+            )
+            )
           )
-          /* severeCasesByRequestedTime:
-          */
         }
       );
   });
