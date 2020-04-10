@@ -68,16 +68,16 @@ describe('test all the impacts by period', () => {
             )
             )
           ),
-          casesForICUByRequestedTime: 0.05 * (
+          casesForICUByRequestedTime: Math.trunc(0.05 * (
             data[0].reportedCases * 10
           ) * (
             2 ** Math.trunc(data[0].timeToElapse / 3)
-          ),
-          casesForVentilatorsByRequestedTime: 0.02 * (
+          )),
+          casesForVentilatorsByRequestedTime: Math.trunc(0.02 * (
             data[0].reportedCases * 10
           ) * (
             2 ** Math.trunc(data[0].timeToElapse / 3)
-          ),
+          )),
           dollarsInFlight: (
             data[0].reportedCases * 10
           ) * (
@@ -113,16 +113,16 @@ describe('test all the impacts by period', () => {
             )
             )
           ),
-          casesForICUByRequestedTime: 0.05 * (
+          casesForICUByRequestedTime: Math.trunc(0.05 * (
             data[1].reportedCases * 10
           ) * (
             2 ** Math.trunc((data[1].timeToElapse * 7) / 3)
-          ),
-          casesForVentilatorsByRequestedTime: 0.02 * (
+          )),
+          casesForVentilatorsByRequestedTime: Math.trunc(0.02 * (
             data[1].reportedCases * 10
           ) * (
             2 ** Math.trunc((data[1].timeToElapse * 7) / 3)
-          ),
+          )),
           dollarsInFlight: (
             data[1].reportedCases * 10
           ) * (
@@ -158,16 +158,16 @@ describe('test all the impacts by period', () => {
             )
             )
           ),
-          casesForICUByRequestedTime: 0.05 * (
+          casesForICUByRequestedTime: Math.trunc(0.05 * (
             data[2].reportedCases * 10
           ) * (
             2 ** Math.trunc((data[2].timeToElapse * 30) / 3)
-          ),
-          casesForVentilatorsByRequestedTime: 0.02 * (
+          )),
+          casesForVentilatorsByRequestedTime: Math.trunc(0.02 * (
             data[2].reportedCases * 10
           ) * (
             2 ** Math.trunc((data[2].timeToElapse * 30) / 3)
-          ),
+          )),
           dollarsInFlight: (
             data[2].reportedCases * 10
           ) * (

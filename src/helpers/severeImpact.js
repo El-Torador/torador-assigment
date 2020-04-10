@@ -22,16 +22,16 @@ const severeImpactByDaily = (data) => (
         )
       )
     ),
-    casesForICUByRequestedTime: 0.05 * (
+    casesForICUByRequestedTime: Math.trunc(0.05 * (
       data.reportedCases * 50
     ) * (
       2 ** Math.trunc(data.timeToElapse / 3)
-    ),
-    casesForVentilatorsByRequestedTime: 0.02 * (
+    )),
+    casesForVentilatorsByRequestedTime: Math.trunc(0.02 * (
       data.reportedCases * 50
     ) * (
       2 ** Math.trunc(data.timeToElapse / 3)
-    ),
+    )),
     dollarsInFlight: (
       data.reportedCases * 50
     ) * (
@@ -66,16 +66,16 @@ const severeImpactByWeekly = (data) => (
         )
       )
     ),
-    casesForICUByRequestedTime: 0.05 * (
+    casesForICUByRequestedTime: Math.trunc(0.05 * (
       data.reportedCases * 50
     ) * (
       2 ** Math.trunc((data.timeToElapse * 7) / 3)
-    ),
-    casesForVentilatorsByRequestedTime: 0.02 * (
+    )),
+    casesForVentilatorsByRequestedTime: Math.trunc(0.02 * (
       data.reportedCases * 50
     ) * (
       2 ** Math.trunc((data.timeToElapse * 7) / 3)
-    ),
+    )),
     dollarsInFlight: (
       data.reportedCases * 50
     ) * (
@@ -110,16 +110,16 @@ const severeImpactByMonthly = (data) => (
         )
       )
     ),
-    casesForICUByRequestedTime: 0.05 * (
+    casesForICUByRequestedTime: Math.trunc(0.05 * (
       data.reportedCases * 50
     ) * (
       2 ** Math.trunc((data.timeToElapse * 30) / 3)
-    ),
-    casesForVentilatorsByRequestedTime: 0.02 * (
+    )),
+    casesForVentilatorsByRequestedTime: Math.trunc(0.02 * (
       data.reportedCases * 50
     ) * (
       2 ** Math.trunc((data.timeToElapse * 30) / 3)
-    ),
+    )),
     dollarsInFlight: (
       data.reportedCases * 50
     ) * (
