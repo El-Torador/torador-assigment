@@ -50,8 +50,10 @@ describe('test all the possibilities of period estimation', () => {
       .toStrictEqual(
         {
           data: data[0],
-          impact: impact.impactByDaily(data[0]),
-          severeImpact: severeImpact.severeImpactByDaily(data[0])
+          estimate: {
+            impact: impact.impactByDaily(data[0]),
+            severeImpact: severeImpact.severeImpactByDaily(data[0])
+          }
         }
       );
   });
@@ -60,8 +62,10 @@ describe('test all the possibilities of period estimation', () => {
       .toStrictEqual(
         {
           data: data[1],
-          impact: impact.impactByWeekly(data[1]),
-          severeImpact: severeImpact.severeImpactByWeekly(data[1])
+          estimate: {
+            impact: impact.impactByWeekly(data[1]),
+            severeImpact: severeImpact.severeImpactByWeekly(data[1])
+          }
         }
       );
   });
@@ -70,8 +74,10 @@ describe('test all the possibilities of period estimation', () => {
       .toStrictEqual(
         {
           data: data[2],
-          impact: impact.impactByMonthly(data[2]),
-          severeImpact: severeImpact.severeImpactByMonthly(data[2])
+          estimate: {
+            impact: impact.impactByMonthly(data[2]),
+            severeImpact: severeImpact.severeImpactByMonthly(data[2])
+          }
         }
       );
   });

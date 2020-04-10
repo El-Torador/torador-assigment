@@ -33,10 +33,12 @@ const severeImpactByDaily = (data) => (
       2 ** Math.trunc(data.timeToElapse / 3)
     )),
     dollarsInFlight: (
-      data.reportedCases * 50
-    ) * (
-      2 ** Math.trunc(data.timeToElapse / 3)
-    ) * data.region.avgDailyIncomeInUSD * data.region.avgDailyIncomePopulation * (
+      (
+        data.reportedCases * 50
+      ) * (
+        2 ** Math.trunc(data.timeToElapse / 3)
+      ) * data.region.avgDailyIncomePopulation
+    ) * data.region.avgDailyIncomeInUSD * (
       data.timeToElapse
     )
   }
@@ -77,10 +79,12 @@ const severeImpactByWeekly = (data) => (
       2 ** Math.trunc((data.timeToElapse * 7) / 3)
     )),
     dollarsInFlight: (
-      data.reportedCases * 50
-    ) * (
-      2 ** Math.trunc((data.timeToElapse * 7) / 3)
-    ) * data.region.avgDailyIncomeInUSD * data.region.avgDailyIncomePopulation * (
+      (
+        data.reportedCases * 50
+      ) * (
+        2 ** Math.trunc((data.timeToElapse * 7) / 3)
+      ) * data.region.avgDailyIncomePopulation
+    ) * data.region.avgDailyIncomeInUSD * (
       data.timeToElapse * 7
     )
   }
@@ -121,10 +125,12 @@ const severeImpactByMonthly = (data) => (
       2 ** Math.trunc((data.timeToElapse * 30) / 3)
     )),
     dollarsInFlight: (
-      data.reportedCases * 50
-    ) * (
-      2 ** Math.trunc((data.timeToElapse * 30) / 3)
-    ) * data.region.avgDailyIncomeInUSD * data.region.avgDailyIncomePopulation * (
+      (
+        data.reportedCases * 50
+      ) * (
+        2 ** Math.trunc((data.timeToElapse * 30) / 3)
+      ) * data.region.avgDailyIncomePopulation
+    ) * data.region.avgDailyIncomeInUSD * (
       data.timeToElapse * 30
     )
   }
