@@ -83,9 +83,7 @@ describe('test all the severe Impacts by period', () => {
             data[0].reportedCases * 50
           ) * (
             2 ** Math.trunc(data[0].timeToElapse / 3)
-          ) * data[0].region.avgDailyIncomeInUSD * data[0].region.avgDailyIncomePopulation * (
-            data[0].timeToElapse
-          )
+          ) * data[0].region.avgDailyIncomeInUSD * data[0].region.avgDailyIncomePopulation * 1
         }
       );
   });
@@ -129,9 +127,7 @@ describe('test all the severe Impacts by period', () => {
             data[1].reportedCases * 50
           ) * (
             2 ** Math.trunc((data[1].timeToElapse * 7) / 3)
-          ) * data[1].region.avgDailyIncomeInUSD * data[1].region.avgDailyIncomePopulation * (
-            data[1].timeToElapse * 7
-          )
+          ) * data[1].region.avgDailyIncomeInUSD * data[1].region.avgDailyIncomePopulation * 7
         }
       );
   });
@@ -175,9 +171,7 @@ describe('test all the severe Impacts by period', () => {
             data[2].reportedCases * 50
           ) * (
             2 ** Math.trunc((data[2].timeToElapse * 30) / 3)
-          ) * data[2].region.avgDailyIncomeInUSD * data[2].region.avgDailyIncomePopulation * (
-            data[2].timeToElapse * 30
-          )
+          ) * data[2].region.avgDailyIncomeInUSD * data[2].region.avgDailyIncomePopulation * 30
         }
       );
   });
