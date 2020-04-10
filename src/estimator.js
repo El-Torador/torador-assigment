@@ -7,28 +7,22 @@ const covid19ImpactEstimator = (data) => {
     case 'days':
       estimation = {
         data,
-        estimate: {
-          impact: impact.impactByDaily(data),
-          severeImpact: severeImpact.severeImpactByDaily(data)
-        }
+        impact: impact.impactByDaily(data),
+        severeImpact: severeImpact.severeImpactByDaily(data)
       };
       break;
     case 'weeks':
       estimation = {
         data,
-        estimate: {
-          impact: impact.impactByWeekly(data),
-          severeImpact: severeImpact.severeImpactByWeekly(data)
-        }
+        impact: impact.impactByWeekly(data),
+        severeImpact: severeImpact.severeImpactByWeekly(data)
       };
       break;
     case 'months':
       estimation = {
         data,
-        estimate: {
-          impact: impact.impactByMonthly(data),
-          severeImpact: severeImpact.severeImpactByMonthly(data)
-        }
+        impact: impact.impactByMonthly(data),
+        severeImpact: severeImpact.severeImpactByMonthly(data)
       };
       break;
     default:
