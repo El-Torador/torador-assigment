@@ -16,6 +16,23 @@ const impactByDaily = (data) => (
         2 ** Math.trunc(data.timeToElapse / 3)
       )
       )
+    ),
+    casesForICUByRequestedTime: 0.05 * (
+      data.reportedCases * 10
+    ) * (
+      2 ** Math.trunc(data.timeToElapse / 3)
+    ),
+    casesForVentilatorsByRequestedTime: 0.02 * (
+      data.reportedCases * 10
+    ) * (
+      2 ** Math.trunc(data.timeToElapse / 3)
+    ),
+    dollarsInFlight: (
+      data.reportedCases * 10
+    ) * (
+      2 ** Math.trunc(data.timeToElapse / 3)
+    ) * data.region.avgDailyIncomeInUSD * data.region.avgDailyIncomePopulation * (
+      data.timeToElapse
     )
   }
 );
@@ -42,6 +59,23 @@ const impactByWeekly = (data) => (
         2 ** Math.trunc((data.timeToElapse * 7) / 3)
       )
       )
+    ),
+    casesForICUByRequestedTime: 0.05 * (
+      data.reportedCases * 10
+    ) * (
+      2 ** Math.trunc((data.timeToElapse * 7) / 3)
+    ),
+    casesForVentilatorsByRequestedTime: 0.02 * (
+      data.reportedCases * 10
+    ) * (
+      2 ** Math.trunc((data.timeToElapse * 7) / 3)
+    ),
+    dollarsInFlight: (
+      data.reportedCases * 10
+    ) * (
+      2 ** Math.trunc((data.timeToElapse * 7) / 3)
+    ) * data.region.avgDailyIncomeInUSD * data.region.avgDailyIncomePopulation * (
+      data.timeToElapse * 7
     )
   }
 );
@@ -68,6 +102,23 @@ const impactByMonthly = (data) => (
         2 ** Math.trunc((data.timeToElapse * 30) / 3)
       )
       )
+    ),
+    casesForICUByRequestedTime: 0.05 * (
+      data.reportedCases * 10
+    ) * (
+      2 ** Math.trunc((data.timeToElapse * 30) / 3)
+    ),
+    casesForVentilatorsByRequestedTime: 0.02 * (
+      data.reportedCases * 10
+    ) * (
+      2 ** Math.trunc((data.timeToElapse * 30) / 3)
+    ),
+    dollarsInFlight: (
+      data.reportedCases * 10
+    ) * (
+      2 ** Math.trunc((data.timeToElapse * 30) / 3)
+    ) * data.region.avgDailyIncomeInUSD * data.region.avgDailyIncomePopulation * (
+      data.timeToElapse * 30
     )
   }
 );

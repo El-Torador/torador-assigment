@@ -28,6 +28,7 @@ const covid19ImpactEstimator = (data) => {
     default:
       break;
   }
+  console.log(estimation);
   return estimation || { data, impact: {}, severeImpact: {} };
 };
 
