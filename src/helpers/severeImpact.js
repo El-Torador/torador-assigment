@@ -32,13 +32,13 @@ const severeImpactByDaily = (data) => (
     ) * (
       2 ** Math.trunc(data.timeToElapse / 3)
     )),
-    dollarsInFlight: (
+    dollarsInFlight: Math.trunc(((
       (
         data.reportedCases * 50
       ) * (
-        2 ** Math.trunc(data.timeToElapse / 3)
+        2 ** Math.trunc((data.timeToElapse * 30) / 3)
       ) * data.region.avgDailyIncomePopulation
-    ) * data.region.avgDailyIncomeInUSD * 1
+    ) * data.region.avgDailyIncomeInUSD * 30) / data.timeToElapse)
   }
 );
 
@@ -76,13 +76,13 @@ const severeImpactByWeekly = (data) => (
     ) * (
       2 ** Math.trunc((data.timeToElapse * 7) / 3)
     )),
-    dollarsInFlight: (
+    dollarsInFlight: Math.trunc(((
       (
         data.reportedCases * 50
       ) * (
-        2 ** Math.trunc((data.timeToElapse * 7) / 3)
+        2 ** Math.trunc((data.timeToElapse * 30) / 3)
       ) * data.region.avgDailyIncomePopulation
-    ) * data.region.avgDailyIncomeInUSD * 7
+    ) * data.region.avgDailyIncomeInUSD * 30) / (data.timeToElapse * 7))
   }
 );
 
@@ -120,13 +120,13 @@ const severeImpactByMonthly = (data) => (
     ) * (
       2 ** Math.trunc((data.timeToElapse * 30) / 3)
     )),
-    dollarsInFlight: (
+    dollarsInFlight: Math.trunc(((
       (
         data.reportedCases * 50
       ) * (
         2 ** Math.trunc((data.timeToElapse * 30) / 3)
       ) * data.region.avgDailyIncomePopulation
-    ) * data.region.avgDailyIncomeInUSD * 30
+    ) * data.region.avgDailyIncomeInUSD * 30) / (data.timeToElapse * 30))
   }
 );
 
