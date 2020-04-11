@@ -76,7 +76,7 @@ const impactByWeekly = (data) => (
       ) * (
         2 ** Math.trunc((data.timeToElapse * 7) / 3)
       ) * data.region.avgDailyIncomePopulation
-    ) * data.region.avgDailyIncomeInUSD) / data.timeToElapse)
+    ) * data.region.avgDailyIncomeInUSD) / (data.timeToElapse * 7))
   }
 );
 
@@ -119,7 +119,7 @@ const impactByMonthly = (data) => (
       ) * (
         2 ** Math.trunc((data.timeToElapse * 30) / 3)
       ) * data.region.avgDailyIncomePopulation
-    ) * data.region.avgDailyIncomeInUSD) / data.timeToElapse)
+    ) * data.region.avgDailyIncomeInUSD) / (data.timeToElapse * 30))
   }
 );
 
