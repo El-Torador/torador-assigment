@@ -36,7 +36,7 @@ const severeImpactByDaily = (data) => (
       (
         data.reportedCases * 50
       ) * (
-        2 ** Math.trunc((data.timeToElapse * 30) / 3)
+        2 ** Math.trunc(data.timeToElapse / 3)
       ) * data.region.avgDailyIncomePopulation
     ) * data.region.avgDailyIncomeInUSD) / data.timeToElapse)
   }
@@ -80,7 +80,7 @@ const severeImpactByWeekly = (data) => (
       (
         data.reportedCases * 50
       ) * (
-        2 ** Math.trunc((data.timeToElapse * 30) / 3)
+        2 ** Math.trunc((data.timeToElapse * 7) / 3)
       ) * data.region.avgDailyIncomePopulation
     ) * data.region.avgDailyIncomeInUSD) / data.timeToElapse)
   }

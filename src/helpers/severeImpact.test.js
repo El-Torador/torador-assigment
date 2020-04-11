@@ -83,7 +83,7 @@ describe('test all the severe Impacts by period', () => {
             (
               data[0].reportedCases * 50
             ) * (
-              2 ** Math.trunc((data[0].timeToElapse * 30) / 3)
+              2 ** Math.trunc(data[0].timeToElapse / 3)
             ) * data[0].region.avgDailyIncomePopulation
           ) * data[0].region.avgDailyIncomeInUSD) / data[0].timeToElapse)
         }
@@ -129,7 +129,7 @@ describe('test all the severe Impacts by period', () => {
             (
               data[1].reportedCases * 50
             ) * (
-              2 ** Math.trunc((data[1].timeToElapse * 30) / 3)
+              2 ** Math.trunc((data[1].timeToElapse * 7) / 3)
             ) * data[1].region.avgDailyIncomePopulation
           ) * data[1].region.avgDailyIncomeInUSD) / data[1].timeToElapse)
         }

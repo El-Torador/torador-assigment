@@ -31,7 +31,7 @@ const impactByDaily = (data) => (
       (
         data.reportedCases * 10
       ) * (
-        2 ** Math.trunc((data.timeToElapse * 30) / 3)
+        2 ** Math.trunc(data.timeToElapse / 3)
       ) * data.region.avgDailyIncomePopulation
     ) * data.region.avgDailyIncomeInUSD) / data.timeToElapse)
   }
@@ -74,7 +74,7 @@ const impactByWeekly = (data) => (
       (
         data.reportedCases * 10
       ) * (
-        2 ** Math.trunc((data.timeToElapse * 30) / 3)
+        2 ** Math.trunc((data.timeToElapse * 7) / 3)
       ) * data.region.avgDailyIncomePopulation
     ) * data.region.avgDailyIncomeInUSD) / data.timeToElapse)
   }
