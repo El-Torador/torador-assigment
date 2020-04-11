@@ -82,7 +82,7 @@ const severeImpactByWeekly = (data) => (
       ) * (
         2 ** Math.trunc((data.timeToElapse * 30) / 3)
       ) * data.region.avgDailyIncomePopulation
-    ) * data.region.avgDailyIncomeInUSD * 30) / (data.timeToElapse * 7))
+    ) * data.region.avgDailyIncomeInUSD * 30) / data.timeToElapse)
   }
 );
 
@@ -126,7 +126,7 @@ const severeImpactByMonthly = (data) => (
       ) * (
         2 ** Math.trunc((data.timeToElapse * 30) / 3)
       ) * data.region.avgDailyIncomePopulation
-    ) * data.region.avgDailyIncomeInUSD * 30) / (data.timeToElapse * 30))
+    ) * data.region.avgDailyIncomeInUSD * 30) / data.timeToElapse)
   }
 );
 

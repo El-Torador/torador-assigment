@@ -131,7 +131,7 @@ describe('test all the severe Impacts by period', () => {
             ) * (
               2 ** Math.trunc((data[1].timeToElapse * 30) / 3)
             ) * data[1].region.avgDailyIncomePopulation
-          ) * data[1].region.avgDailyIncomeInUSD * 30) / (data[1].timeToElapse * 7))
+          ) * data[1].region.avgDailyIncomeInUSD * 30) / data[1].timeToElapse)
         }
       );
   });
@@ -177,7 +177,7 @@ describe('test all the severe Impacts by period', () => {
             ) * (
               2 ** Math.trunc((data[2].timeToElapse * 30) / 3)
             ) * data[2].region.avgDailyIncomePopulation
-          ) * data[2].region.avgDailyIncomeInUSD * 30) / (data[2].timeToElapse * 30))
+          ) * data[2].region.avgDailyIncomeInUSD * 30) / data[2].timeToElapse)
         }
       );
   });
